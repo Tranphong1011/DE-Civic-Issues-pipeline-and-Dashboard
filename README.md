@@ -75,8 +75,10 @@ High-level architecture:
      - Uses:
        - Identifier Attribute = `id`
        - Index Operation = `upsert`.
-![Nifi_Flow](Nifi_Flow.png)
+
 <img src="Nifi_Flow.png" alt="NiFi Flow" style="max-width: 100%; height: auto;">
+
+
 3. **Pagination & Backfill**
    - **GetEveryPage (ExecuteScript):**
      - Reads the JSON metadata (`metadata.pagination.page`, `metadata.pagination.pages`, `metadata.pagination.next_page_url`).
