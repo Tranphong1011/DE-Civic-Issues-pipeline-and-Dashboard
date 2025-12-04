@@ -6,7 +6,7 @@ This project implements an end-to-end **data pipeline** that ingests 311 civic i
 The pipeline is orchestrated in **Apache NiFi** with custom **Python (Jython) ExecuteScript** processors for API calls, pagination, geospatial transformation, and historical backfill.
 
 
----
+
 
 ## Features
 
@@ -34,7 +34,7 @@ The pipeline is orchestrated in **Apache NiFi** with custom **Python (Jython) Ex
 - **Extensible & configurable**
   - Place URL, scheduling interval, and indices are configurable via NiFi properties and environment variables.
 
----
+
 
 ## Tech Stack
 
@@ -45,7 +45,7 @@ The pipeline is orchestrated in **Apache NiFi** with custom **Python (Jython) Ex
 - **Source API:** SeeClickFix API (311 civic issues)
 - **Data Format:** JSON (including geospatial coordinates)
 
----
+
 
 ## Architecture
 
@@ -96,6 +96,3 @@ High-level architecture:
 
 See `docs/architecture-diagram.png` and `docs/nifi-pipeline.png` for diagrams and NiFi canvas screenshots.
 
----
-
-## Repository Structure
