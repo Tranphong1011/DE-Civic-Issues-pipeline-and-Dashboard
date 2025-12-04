@@ -4,7 +4,7 @@
 This project implements an end-to-end **data pipeline** that ingests 311 civic issue data from the **SeeClickFix API**, loads it into **Elasticsearch**, and visualizes it in **Kibana** with a real-time dashboard.
 
 The pipeline is orchestrated in **Apache NiFi** with custom **Python (Jython) ExecuteScript** processors for API calls, pagination, geospatial transformation, and historical backfill.
-
+![architecture-diagram](architecture-diagram.png)
 
 
 
@@ -75,7 +75,7 @@ High-level architecture:
      - Uses:
        - Identifier Attribute = `id`
        - Index Operation = `upsert`.
-
+![Nifi_Flow](Nifi_Flow.png)
 3. **Pagination & Backfill**
    - **GetEveryPage (ExecuteScript):**
      - Reads the JSON metadata (`metadata.pagination.page`, `metadata.pagination.pages`, `metadata.pagination.next_page_url`).
@@ -93,6 +93,6 @@ High-level architecture:
      - `coords` mapped as `geo_point`.
    - Kibana uses an index pattern `scf*` with time field `created_at`.
    - Dashboard visualizes counts, categories, and geospatial distribution of issues.
-
-See `docs/architecture-diagram.png` and `docs/nifi-pipeline.png` for diagrams and NiFi canvas screenshots.
+![Kibana_Dashboard](Kibana_Dashboard.png)
+See `architecture-diagram.png` and `nifi-pipeline.png` for diagrams and NiFi canvas screenshots.
 
